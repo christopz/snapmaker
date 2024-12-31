@@ -71,7 +71,7 @@
       "capabilities" : [ "milling" ],
       "description" : "Snapmaker 2.0 A350T (4-axis CNC)\n\n200W CNC Module\nCTZ Stiffy Kit\nCTZ Aluminum Fixture Plate\nSBR16 Y-Axis Mod w/ CTZ Joiners & Capture Plates\nRotary Module (CTZ Model)\nHAAS Toolmaker's Vise",
       "minimumRevision" : 45805,
-      "model" : "2.0 A350T - CTZ",
+      "model" : "2.0 A350T - CTZ TEST",
       "vendor" : "Snapmaker"
    },
    "interactions" : {
@@ -614,23 +614,23 @@
             {
                "control" : "driven",
                "direction" : [ 0, 0, 1 ],
-               "home" : 200,
+               "home" : 122.38996887207031,
                "id" : "Z",
-               "max" : 144.30693054199219,
-               "min" : -100,
+               "max" : 122.38996887207031,
+               "min" : -70.297029495239258,
                "name" : "Z",
                "parts" : [
                   {
                      "control" : "driven",
                      "direction" : [ 1, 0, 0 ],
                      "id" : "X",
-                     "max" : 171.089111328125,
-                     "min" : -190,
+                     "max" : 375,
+                     "min" : 0,
                      "name" : "X",
                      "parts" : [
                         {
                            "attach_frame" : {
-                              "point" : [ 0, 0, 0 ],
+                              "point" : [ 169.05198857299666, -244.33115630028098, 244.52140133788026 ],
                               "x_direction" : [ 1, 0, 0 ],
                               "z_direction" : [ 0, 0, 1 ]
                            },
@@ -648,7 +648,8 @@
                            "type" : "head"
                         }
                      ],
-                     "type" : "linear"
+                     "type" : "linear",
+                     "value_as_modelled" : 225
                   }
                ],
                "type" : "linear"
@@ -656,27 +657,25 @@
             {
                "control" : "driven",
                "direction" : [ 0, -1, 0 ],
-               "home" : 350,
+               "home" : 375,
                "id" : "Y",
-               "max" : 13.861386299133301,
-               "min" : -350,
+               "max" : 375,
+               "min" : 0,
                "name" : "Y",
                "parts" : [
                   {
                      "axis_of_rotation" : {
                         "direction" : [ 0, -1, 0 ],
-                        "point" : [ 127.75601557828236, 315.02896594189713, 196.78164498390822 ]
+                        "point" : [ 109.40605228626234, -275.16251364889609, 181.37083751301333 ]
                      },
                      "control" : "driven",
                      "id" : "rotary_0",
-                     "max" : 360,
-                     "min" : 0,
                      "name" : "B",
                      "offset" : [ 0, 0, 0 ],
                      "parts" : [
                         {
                            "attach_frame" : {
-                              "point" : [ 0, 0, 0 ],
+                              "point" : [ 109.4060522862177, -240.62083693741135, 181.37083751301321 ],
                               "x_direction" : [ 1, 0, 0 ],
                               "z_direction" : [ 0, 0, 1 ]
                            },
@@ -688,7 +687,8 @@
                      "type" : "rotary"
                   }
                ],
-               "type" : "linear"
+               "type" : "linear",
+               "value_as_modelled" : 300
             }
          ],
          "units" : {
@@ -732,7 +732,10 @@
    },
    "post" : {
       "default" : {
-         "path" : "user://snapmaker-baxis 2.cps"
+         "path" : "user://fanuc.cps",
+         "properties" : {
+            "simulateConnectionMovesEnabled" : true
+         }
       }
    },
    "tooling" : {
